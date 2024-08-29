@@ -26,4 +26,20 @@ df_actualizado.to_csv('archivo_base_actualizado.csv', index=False)
 
 print(f'Se han insertado {len(nuevos_registros)} registros nuevos en el archivo base.')
 
+
+# Seleccionar columnas específicas para el nuevo DataFrame
+columnas_a_conservar = ['INSTITUCION', 'CALENDARIO', 'SECTOR', 'ZONA_SEDE', 'JORNADA','GRADO_COD']
+df_nuevo = df_actualizado[columnas_a_conservar]
+
+# Guardar el nuevo DataFrame como archivo CSV
+#archivo_csv = 'nuevo_dataframe.csv'
+df_nuevo.to_csv('nuevo_dataframe.csv', index=False)
+
+# Mostrar el nuevo DataFrame
+print("\nNuevo DataFrame con columnas específicas:")
+print(df_nuevo)
 #print(Nuevo.head())
+
+# Imprime los nombres de las columnas
+print("Columnas en el DataFrame original:")
+print(Original.columns)
